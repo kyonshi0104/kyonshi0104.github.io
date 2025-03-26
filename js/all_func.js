@@ -10,7 +10,10 @@ function iframe_change(newUrl) {
 
     setTimeout(() => {
         iframe.src = newUrl;
-        iframe.style.opacity = "1";
+        iframe.addEventListener('load', function onLoad() {
+            iframe.style.opacity = "1";
+            iframe.removeEventListener('load', onLoad);
+        });
     }, 400);
 }
 
