@@ -1,0 +1,10 @@
+@font-face {
+    font-family: bestten-dot;
+    src: url("/res/BestTen-DOT.otf");
+}
+
+body {
+    font-family: bestten-dot;
+    margin: 0;
+    color: #ffffff;
+}

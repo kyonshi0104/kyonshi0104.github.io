@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイドバー例</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+    }
+    .sidebar {
+      width: 200px; /* サイドバーの幅 */
+      background-color: #2c3e50; /* 背景色 */
+      color: white;
+      height: 100vh; /* 画面全体の高さ */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>サイドバー</h2>
+    <ul>
+      <li>メニュー1</li>
+      <li>メニュー2</li>
+      <li>メニュー3</li>
+    </ul>
+  </div>
+  <div class="content">
+    <h1>メインコンテンツ</h1>
+    <p>ここにメインの内容が入ります。</p>
+  </div>
+</body>
+</html>
