@@ -7,4 +7,7 @@ body {
     font-family: bestten-dot;
     margin: 0;
     color: #ffffff;
+    overflow: auto;
+    overflow-x: hidden;
+
 }

@@ -9,6 +9,7 @@ body {
     font-family: bestten-dot;
     margin: 0;
     display: flex;
+    color: #ffffff;
 }
 
 .content {
@@ -33,7 +34,6 @@ body {
 
 .sidebar {
     background-color: rgba(29, 54, 75, 0.3);
-    color: #ffffff;
     width: 300px;
     height: 100vh;
     box-sizing: border-box;
