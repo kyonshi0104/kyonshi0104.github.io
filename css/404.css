@@ -11,3 +11,8 @@ body {
     backdrop-filter: blur(10px);
     color: white;
 }
+
+h1 {
+    font-size:80px;
+    height: 0px;
+}

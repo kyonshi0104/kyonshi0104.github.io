@@ -14,5 +14,6 @@ body {
 
 img {
     pointer-events: none;
+    -webkit-user-select: none; /* Safari対応 */
     user-select: none;
 }
