@@ -11,3 +11,8 @@ body {
     overflow-x: hidden;
 
 }
+
+img {
+    pointer-events: none;
+    user-select: none;
+}

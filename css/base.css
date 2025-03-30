@@ -3,6 +3,11 @@
     src: url("/res/BestTen-DOT.otf");
 }
 
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
 body {
     background: url("/res/top_background.png") no-repeat center/cover fixed;
     background-position: top;
