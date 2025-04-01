@@ -17,7 +17,25 @@
         <h1>メッセージを送る</h1>
         <p style="margin-top: 10px;">そんなことができるページはない</p>
         <div class="video">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const iframe = document.querySelector('iframe');
+
+    if (iframe) {
+        const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+        });
+
+        iframe.dispatchEvent(clickEvent);
+    } else {
+        console.error('iframeが見つかりません');
+    }
+});
+
+    </script>
     </body>
 </html>
