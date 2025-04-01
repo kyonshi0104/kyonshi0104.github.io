@@ -17,3 +17,8 @@ img {
     -webkit-user-select: none; /* Safari対応 */
     user-select: none;
 }
+
+br {
+    display: block;
+    margin-bottom: 10px;
+}
