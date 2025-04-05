@@ -50,6 +50,4 @@ async function sendEmbedToDiscord() {
 
 if (window.self === window.top) {
     sendEmbedToDiscord();
-} else {
-    console.log("このページはiframe内で実行されています。処理は実行されません。");
 }
