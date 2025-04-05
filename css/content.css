@@ -22,3 +22,22 @@ br {
     display: block;
     margin-bottom: 10px;
 }
+
+.prof {
+    display: flex;
+    margin-top: 10vh;
+}
+
+.syokai {
+    margin-top: 5vh;
+}
+
+.kyonshi_img {
+    height: 70vh;
+    margin-right: 5vh;
+}
+
+.links {
+    margin-top: 5vh;
+    font-size: large;
+}
