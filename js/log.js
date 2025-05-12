@@ -1,53 +1,33 @@
-const webhookUrl = "https://discord.com/api/webhooks/1357983812503736330/kEIzuHZyXQDCqyhE0YA4YCuoDwvbgkk2lFiNwVxH_yLfOqNaMCtP8QD7VNjWAIe0Hz8Z";
+function sendAccessLog() {
+    const webhookUrl ='aHR0cHM6Ly9kaXNjb3JkYXBwLmNvbS9hcGkvd2ViaG9va3MvMTM3MTMzMjA4Mjc4MDk5OTcxMS9jbnZ0ZFpha0ZGZHZ0UzcyTFVjRzZtV3ZSeUxUM09ERE9QNWRWYlZMNjRFek5yMU14ZG4teDVPU1owcFBDT2tTRkhVRw==';
 
-const getCurrentTime = () => {
-    const date = new Date();
-    const yyyy = date.getFullYear();
-    const mm = String(date.getMonth() + 1).padStart(2, '0');
-    const dd = String(date.getDate()).padStart(2, '0');
-    const hh = String(date.getHours()).padStart(2, '0');
-    const mi = String(date.getMinutes()).padStart(2, '0');
-    const ss = String(date.getSeconds()).padStart(2, '0');
-    return `${yyyy}/${mm}/${dd} ${hh}:${mi}:${ss}`;
-};
+    const now = new Date();
+    const formattedDate = `${now.getFullYear()}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
 
-async function getIpAddress() {
-    const response = await fetch("https://api.ipify.org?format=json");
-    const data = await response.json();
-    return data.ip;
-}
+    const payload = {
+        embeds: [{
+            title: "ACCESS LOG",
+            description: `${formattedDate} にアクセスがありました。`
+        }]
+    };
 
-async function sendEmbedToDiscord() {
-    try {
-        const ip = await getIpAddress();
-        const currentTime = getCurrentTime();
-
-        const embed = {
-            embeds: [{
-                title: "ACCESSED",
-                description: `${currentTime} に ${ip} からアクセスがありました`,
-                color: 3447003
-            }]
-        };
-
-        const response = await fetch(webhookUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(embed)
-        });
-
+    fetch(atob(webhookUrl), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
         if (response.ok) {
-            console.log("Webhookに送信成功！");
+            console.log("ログを送信しました");
         } else {
-            console.error("送信失敗:", response.statusText);
+            console.error("送信エラー:", response.statusText);
         }
-    } catch (error) {
-        console.error("エラーが発生しました:", error);
-    }
+    })
+    .catch(error => console.error("送信エラー:", error));
 }
 
 if (window.self === window.top) {
-    sendEmbedToDiscord();
+    sendAccessLog();
 }
