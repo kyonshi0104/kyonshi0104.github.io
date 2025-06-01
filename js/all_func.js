@@ -17,6 +17,7 @@ function iframe_change(newUrl) {
         iframe.style.opacity = "0";
 
         setTimeout(() => {
+
             iframe.src = newUrl;
             iframe.addEventListener('load', function onLoad() {
                 iframe.style.opacity = "1";
@@ -26,14 +27,17 @@ function iframe_change(newUrl) {
     }
 }
 
-
+function removeHtmlExtension(url) {
+    return url.endsWith('.html') ? url.slice(0, -5) : url;
+}
 
 
 function locate_change(newURL) {
+    newURLe = removeHtmlExtension(newURL);
     if (window.self !== window.top) {
-        window.top.history.replaceState(null, null, newURL);
+        window.top.history.replaceState(null, null, newURLe);
     } else {
-        history.replaceState(null, null, newURL);
+        history.replaceState(null, null, newURLe);
     }
     iframe_change(newURL);
 }

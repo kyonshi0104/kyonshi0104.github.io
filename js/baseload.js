@@ -1,4 +1,5 @@
 if (window.self === window.top) {
+
     fetch('/base.html')
         .then(response => {
             if (!response.ok) {
@@ -26,6 +27,13 @@ if (window.self === window.top) {
                     locate_change(this.dataset.src)
                 });
             });
+
+            const url = window.location.href;
+            if (url.endsWith('.html')) {
+                const newUrl = url.slice(0, -5);
+                history.replaceState(null, '', newUrl);
+    }
+
 
         })
         .catch(error => {
