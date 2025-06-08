@@ -10,15 +10,14 @@ async function fetchRepositories(username) {
             itemDiv.className = "item";
 
             const title = document.createElement("h3");
-            title.textContent = repo.name.replace(/[-_]/g, " "); // 見やすくするために "-" や "_" をスペースに変換
+            title.textContent = repo.name.replace(/[-_]/g, " ");
 
             const description = document.createElement("p");
-            description.textContent = repo.description || "説明なし"; // 説明がない場合のデフォルト
+            description.textContent = repo.description || "説明なし";
 
             const language = document.createElement("small");
-            language.textContent = repo.language || "言語不明"; // 言語がない場合のデフォルト
+            language.textContent = repo.language || "言語不明";
 
-            // 要素を `itemDiv` に追加
             itemDiv.appendChild(title);
             itemDiv.appendChild(description);
             itemDiv.appendChild(language);
@@ -26,7 +25,7 @@ async function fetchRepositories(username) {
             return itemDiv;
         });
 
-        return repoElements; // 生成した要素のリストを返す
+        return repoElements;
     } catch (error) {
         console.error("Error fetching repositories:", error);
         return [];
@@ -34,6 +33,6 @@ async function fetchRepositories(username) {
 }
 
 fetchRepositories("kyonshi0104").then(repoElements => {
-const container = document.getElementById("works_container"); // 表示するコンテナ
+const container = document.getElementById("works_container");
 repoElements.forEach(element => container.appendChild(element))
-};
+});
