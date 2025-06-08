@@ -29,7 +29,7 @@ if (window.self === window.top) {
             });
 
             const url = window.location.href;
-            if (url.endsWith('.html')) {
+            if (url.endsWith('.html') && window.self === window.top && !['127.0.0.1', 'localhost'].includes(window.location.hostname)) {
                 const newUrl = url.slice(0, -5);
                 history.replaceState(null, '', newUrl);
     }

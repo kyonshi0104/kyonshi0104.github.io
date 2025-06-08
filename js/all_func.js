@@ -28,7 +28,11 @@ function iframe_change(newUrl) {
 }
 
 function removeHtmlExtension(url) {
+    if (window.self === window.top && !['127.0.0.1', 'localhost'].includes(window.location.hostname)) {
     return url.endsWith('.html') ? url.slice(0, -5) : url;
+} else {
+    return url
+}
 }
 
 

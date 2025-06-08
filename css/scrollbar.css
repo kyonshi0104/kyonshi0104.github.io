@@ -1,11 +1,15 @@
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 5px;
     transition: 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgb(196, 195, 195);
     transition: 0.3s ease;
+}
+
+::-webkit-scrollbar:hover {
+    background: #919191;
 }
 
 ::-webkit-scrollbar-thumb:hover {

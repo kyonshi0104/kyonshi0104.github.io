@@ -1,0 +1,23 @@
+.item {
+    transition: all 0.2s ease-in-out;
+    background-color: rgba(133, 133, 133,0.5);
+    backdrop-filter: blur(10px);
+    border:2px solid white;
+    padding: 5px 10px;
+    margin: 15px 5px;
+
+}
+
+.item p {
+    color: rgb(211, 209, 209);
+}
+
+.item small {
+    transform: translateY(-20px);
+    float: right;
+}
+
+.item:hover {
+    transform:translateY(-2px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
