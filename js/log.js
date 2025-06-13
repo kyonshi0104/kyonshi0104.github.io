@@ -1,7 +1,6 @@
 function sendAccessLog() {
     const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkYXBwLmNvbS9hcGkvd2ViaG9va3MvMTM3MTMzMjA4Mjc4MDk5OTcxMS9jbnZ0ZFpha0ZGZHZ0UzcyTFVjRzZtV3ZSeUxUM09ERE9QNWRWYlZMNjRFek5yMU14ZG4teDVPU1owcFBDT2tTRkhVRw==';
 
-    // 日本時間 (UTC+9:00) に強制
     const now = new Date();
     const formatter = new Intl.DateTimeFormat("ja-JP", {
         timeZone: "Asia/Tokyo",
@@ -16,16 +15,18 @@ function sendAccessLog() {
 
     const formattedDate = formatter.format(now) + " (UTC+9:00)";
 
-    // デバイス情報
     const userAgent = navigator.userAgent;
-
-    // 言語設定
     const userLanguage = navigator.language || navigator.userLanguage;
 
     const payload = {
         embeds: [{
-            title: "ACCESS LOG",
-            description: `${formattedDate} にアクセスがありました。\nデバイス情報: ${userAgent}\n使用言語: ${userLanguage}`
+            title: "📌 ACCESS LOG",
+            fields: [
+                { name: "アクセス日時", value: formattedDate, inline: false },
+                { name: "デバイス情報", value: userAgent, inline: false },
+                { name: "使用言語", value: userLanguage, inline: false }
+            ],
+            color: 16750848
         }]
     };
 
