@@ -1,21 +1,37 @@
 function sendAccessLog() {
     const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkYXBwLmNvbS9hcGkvd2ViaG9va3MvMTM3MTMzMjA4Mjc4MDk5OTcxMS9jbnZ0ZFpha0ZGZHZ0UzcyTFVjRzZtV3ZSeUxUM09ERE9QNWRWYlZMNjRFek5yMU14ZG4teDVPU1owcFBDT2tTRkhVRw==';
 
+    // 日本時間 (UTC+9:00) に強制
     const now = new Date();
-    const formattedDate = `${now.getFullYear()}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+    const formatter = new Intl.DateTimeFormat("ja-JP", {
+        timeZone: "Asia/Tokyo",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hourCycle: "h23"
+    });
+
+    const formattedDate = formatter.format(now) + " (UTC+9:00)";
+
+    // デバイス情報
+    const userAgent = navigator.userAgent;
+
+    // 言語設定
+    const userLanguage = navigator.language || navigator.userLanguage;
 
     const payload = {
         embeds: [{
             title: "ACCESS LOG",
-            description: `${formattedDate} にアクセスがありました。`
+            description: `${formattedDate} にアクセスがありました。\nデバイス情報: ${userAgent}\n使用言語: ${userLanguage}`
         }]
     };
 
     fetch(atob(webhookUrl), {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     })
     .then(response => {
@@ -28,12 +44,14 @@ function sendAccessLog() {
     .catch(error => console.error("送信エラー:", error));
 }
 
+
 if (window.self === window.top && !['127.0.0.1', 'localhost'].includes(window.location.hostname)) {
     sendAccessLog();
 }
 
-window.onload = function() {
-    if (/Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
-        alert("現在モバイルデバイスに対応してないです\nほんとすいません");
+document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent);
+    if (isMobile) {
+        alert("現在モバイルデバイスに対応していません\nほんとすいません");
     }
-};
+});
