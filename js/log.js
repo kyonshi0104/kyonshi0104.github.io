@@ -31,3 +31,9 @@ function sendAccessLog() {
 if (window.self === window.top && !['127.0.0.1', 'localhost'].includes(window.location.hostname)) {
     sendAccessLog();
 }
+
+window.onload = function() {
+    if (/Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        alert("現在モバイルデバイスに対応してないです\nほんとすいません");
+    }
+};
