@@ -1,5 +1,5 @@
 async function fetchRepositories(username) {
-    const url = `https://api.github.com/users/${username}/repos`;
+    let url = `https://api.github.com/users/${username}/repos`;
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
@@ -16,11 +16,13 @@ async function fetchRepositories(username) {
             description.textContent = repo.description || "説明なし";
 
             const language = document.createElement("small");
-            language.textContent = repo.language || "言語不明";
+            language.textContent = repo.language || "";
 
             itemDiv.appendChild(title);
             itemDiv.appendChild(description);
             itemDiv.appendChild(language);
+
+            itemDiv.onclick = function() {window.open(repo.html_url,"_blank");};
 
             return itemDiv;
         });
@@ -32,7 +34,9 @@ async function fetchRepositories(username) {
     }
 }
 
-fetchRepositories("kyonshi0104").then(repoElements => {
-const container = document.getElementById("works_container");
-repoElements.forEach(element => container.appendChild(element))
+document.addEventListener("DOMContentLoaded", function () {
+    fetchRepositories("kyonshi0104").then(repoElements => {
+        const container = document.getElementById("works_container");
+        repoElements.forEach(element => container.appendChild(element))
 });
+})
