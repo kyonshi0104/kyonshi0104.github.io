@@ -53,6 +53,7 @@ if (window.self === window.top && !['127.0.0.1', 'localhost'].includes(window.lo
 document.addEventListener("load", function () {
     const isMobile = /Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent);
     if (isMobile) {
+        console.log("モバイルデバイスだと思われ")
         alert("現在モバイルデバイスに対応していません\nほんとすいません");
     }
 });
