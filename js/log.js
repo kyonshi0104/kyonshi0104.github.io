@@ -50,7 +50,7 @@ if (window.self === window.top && !['127.0.0.1', 'localhost'].includes(window.lo
     sendAccessLog();
 }
 
-document.addEventListener("load", function () {
+window.addEventListener("load", function () {
     const isMobile = /Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent);
     if (isMobile) {
         console.log("モバイルデバイスだと思われ")
