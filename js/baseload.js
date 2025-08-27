@@ -33,11 +33,11 @@ if (window.self === window.top) {
                 document.addEventListener('click', function (event) {
                     const menuToggle = document.getElementById('menu-toggle');
                     const sidebars = document.querySelector('.sidebars');
+                    const humbugerger = document.querySelector('.hamburger');
 
                     if (menuToggle.contains(event.target)) {
                         sidebars.classList.toggle('hidden');
-                    } else if (!sidebars.contains(event.target) || event.target.tagName === 'LI') {
-                        sidebars.classList.add('hidden');
+                        humbugerger.classList.toggle('active');
                     }
                 });
             };
