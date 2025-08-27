@@ -38,6 +38,9 @@ if (window.self === window.top) {
                     if (menuToggle.contains(event.target)) {
                         sidebars.classList.toggle('hidden');
                         humbugerger.classList.toggle('active');
+                    } else if (!sidebars.contains(event.target) || event.target.tagName === 'LI') {
+                        sidebars.classList.add('hidden');
+                        humbugerger.classList.toggle('active');
                     }
                 });
             };

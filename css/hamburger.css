@@ -21,7 +21,6 @@
   transition: all 0.3s ease;
 }
 
-/* 三本線の初期状態 */
 .hamburger span:nth-child(1) {
   transform: translateY(0) rotate(0);
 }
@@ -32,7 +31,6 @@
   transform: translateY(0) rotate(0);
 }
 
-/* .active クラスでバッテンに変形 */
 .hamburger.active span:nth-child(1) {
   transform: translateY(11px) rotate(45deg);
 }
