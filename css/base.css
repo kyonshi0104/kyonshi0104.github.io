@@ -3,6 +3,10 @@
     src: url("/res/BestTen-DOT.otf");
 }
 
+:root {
+    --bgColor-inset: "#000000"
+}
+
 .logo {
     margin-bottom: 30px;
     width: 100%;
