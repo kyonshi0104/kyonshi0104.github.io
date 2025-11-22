@@ -4,16 +4,44 @@ html,body {
 }
 
 body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
+
+    grid-template-areas:
+        "sidebar content";
+
+
+
     font-family: makinas-f;
     background-color: var(--background);
     color: var(--main-font);
 }
 
 sidebar {
+    grid-area: sidebar;
     user-select: none;
-    position: fixed;
     background-color: var(--sidebar);
     height: 100%;
-    width: 250px;
+    width: 200px;
     padding: 10px;
+
+    transition: all 0.3s ease-out;
+    z-index: 9999;
+}
+
+sidebar:hover {
+    width: 250px;
+    box-shadow: 2px 0 5px 2px var(--sidebar-shadow);
+}
+
+#logo {
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+}
+
+#content {
+    grid-area: content;
+    background-color: var(--content-background);
 }
