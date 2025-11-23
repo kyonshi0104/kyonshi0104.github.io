@@ -1,0 +1,16 @@
+#title {
+    display: flex;
+}
+
+#title div {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+#title h1 {
+    font-size: 50px;
+}
+
+#title h2 {
+    font-weight: 200;
+}
