@@ -12,4 +12,9 @@
 
     --content-background: #95949a;
     --content-border: #594255;
+
+    --scrollbar-thumb-color: gray;
+    --scrollbar-thumb-color-hover: rgb(104, 104, 104);
+
+    --links-masyumaro: #f3969a
 }

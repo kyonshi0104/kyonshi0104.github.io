@@ -1,0 +1,28 @@
+/*----------webkit-----------*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: auto;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 0;
+
+    transition: background 0.1s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-color-hover);
+}
+
+/*---------gecko----------*/
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-color) transparent;
+}

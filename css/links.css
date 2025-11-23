@@ -1,11 +1,17 @@
+#links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .link  {
     background-color: #777272;
     border: solid 2px #777272;
     border-radius: 15px;
     padding: 15px;
+    margin: 10px;
     display: flex;
 
-    width: 400px;
+    width: 370px;
     height: 105px;
 
     transition: all 0.2s ease-in-out;

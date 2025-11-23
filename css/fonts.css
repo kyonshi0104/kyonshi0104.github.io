@@ -1,13 +1,13 @@
 @font-face {
     font-family: makinas-f;
-    src: url(/res/Makinas-4-Flat.otf);
+    src: url(/res/fonts/Makinas-4-Flat.otf);
 }
 
 @font-face {
     font-family: makinas-s;
-    src: url(/res/Makinas-4-Square.otf);
+    src: url(/res/fonts/Makinas-4-Square.otf);
 }
 @font-face {
     font-family: bestten-dot;
-    src: url(/res/BestTen-DOT.otf);
+    src: url(/res/fonts/BestTen-DOT.otf);
 }
