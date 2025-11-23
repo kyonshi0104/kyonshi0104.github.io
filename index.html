@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/res/favicon.ico" type="image/x-icon">
+
         <title>kyonshi's home</title>
         <link rel="stylesheet" href="css/color.css">
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <script src="/js/sidebar.js"></script>
+        <script src="/js/page_switcher.js"></script>
     </head>
     <body>
-        <sidebar>
-            <h2 id="logo">kyonshi's home</h2>
+        <div id="back"></div>
+        <sidebar id="sidebar">
+            <h2 id="logo"><a href="/" style="color: inherit; text-decoration: none;">kyonshi's home</a></h2>
+            <div class="tab" id="top">TOP</div>
+            <div class="tab" id="profile">PROFILE</div>
+            <div class="tab" id="works">WORKS</div>
+            <div class="tab" id="links">LINKS</div>
+            <div class="tab" id="contact">CONTACT</div>
         </sidebar>
         <div id="content">
-
+            <iframe id="main_content" src="top.html"></iframe>
         </div>
     </body>
 </html>

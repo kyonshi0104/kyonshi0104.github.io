@@ -1,0 +1,26 @@
+.link  {
+    background-color: #777272;
+    border: solid 2px #777272;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+
+    width: 400px;
+    height: 105px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+    /*border: solid 2px #615e5e;*/
+    transform: translateX(5px)
+}
+
+.link img {
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.link h2 {
+    margin-bottom: 5px;
+}

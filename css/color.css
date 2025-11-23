@@ -1,8 +1,15 @@
 :root {
     --main-font: #a89dac;
-    --background :#e7e7eb;
+    --content-font: #e7e7eb;
+
     --sidebar: #c8c2c6;
     --sidebar-shadow: #bbb6b9;
+    --sidebar-font: #95859c;
+    --sidebar-font-hover: #4f455c;
+
+    --background :#e7e7eb;
+
 
     --content-background: #95949a;
+    --content-border: #594255;
 }
