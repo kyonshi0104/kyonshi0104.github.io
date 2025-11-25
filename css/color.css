@@ -16,5 +16,10 @@
     --scrollbar-thumb-color: gray;
     --scrollbar-thumb-color-hover: rgb(104, 104, 104);
 
-    --links-masyumaro: #f3969a
+    --sort-background: #8d7c73;
+    --sort-item-background: #9b8a80;
+    --sort-item-hover: #81746c;
+    --sort-item-focus: #7a6d64;
+
+    --works-item-background: #9b8a80;
 }

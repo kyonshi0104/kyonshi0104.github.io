@@ -1,0 +1,60 @@
+#sort {
+    width:fit-content;
+    display: flex;
+    margin: 10px;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: var(--sort-background);
+}
+
+.sort_item {
+    user-select: none;
+    margin: 5px;
+    margin-right: 10px;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: var(--sort-item-background);
+
+    transition: background-color 0.1s ease-in-out;
+}
+
+.sort_item.focused {
+    background-color: var(--sort-item-focus);
+}
+
+.sort_item:hover:not(.focused) {
+    background-color: var(--sort-item-hover);
+}
+
+#works_container {
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 500px;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--works-item-background);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.item:hover {
+    transform: translate(5px,-5px);
+}
+
+small {
+    color: var(--content-font);
+}
+
+#GitHub:not(.sort_item) {
+    background-color: #22272e;
+}
+
+#Note:not(.sort_item) {
+    background-color: var(--content-font);
+    color: #22272e
+}

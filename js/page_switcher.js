@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         iframe.classList.add("disapper");
 
         await sleep(500)
-        iframe.src = `${page}.html`
-        //history.pushState(null, "", page);
+        iframe.src = `${page}`
+        history.pushState(null, "", page);
         iframe.classList.remove("disapper");
     }
 

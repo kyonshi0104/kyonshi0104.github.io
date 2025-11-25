@@ -17,18 +17,19 @@
         <title>kyonshi's home</title>
         <link rel="stylesheet" href="css/color.css">
         <link rel="stylesheet" href="css/fonts.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mobile_main.css">
         <link rel="stylesheet" href="css/scrollbar.css">
-
-        <script src="/js/go_mobile.js"></script>
 
         <script src="/js/sidebar.js"></script>
         <script src="/js/page_switcher.js"></script>
         <script src="/js/base_handover.js"></script>
+        <script src="/js/sidebar_toggle.js"></script>
+
+        <script src="/js/mobile_attention.js"></script>
     </head>
     <body>
         <div id="back"></div>
-        <sidebar id="sidebar">
+        <sidebar id="sidebar" class="hidden">
             <h2 id="logo"><a href="/" style="color: inherit; text-decoration: none;">kyonshi's home</a></h2>
             <div class="tab" id="top">TOP</div>
             <div class="tab" id="profile">PROFILE</div>
@@ -36,6 +37,11 @@
             <div class="tab" id="links">LINKS</div>
             <div class="tab" id="contact">CONTACT</div>
         </sidebar>
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div id="content">
             <iframe id="main_content" src="top.html"></iframe>
         </div>
