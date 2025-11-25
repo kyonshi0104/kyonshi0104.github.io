@@ -3,8 +3,6 @@ var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.
 
 if (isMobile) {
 
-    var currentPath = window.location.pathname;
-
     var searchParams = new URLSearchParams(window.location.search);
     var page = searchParams.get("page");
 
