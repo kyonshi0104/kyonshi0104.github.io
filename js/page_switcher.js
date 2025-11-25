@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         await sleep(500)
         iframe.src = `${page}`
+        await sleep(200)
         history.pushState(null, "", page);
         iframe.classList.remove("disapper");
     }
