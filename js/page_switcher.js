@@ -1,5 +1,11 @@
 const development = true
 
+function waitForLoad(iframe) {
+    return new Promise(resolve => {
+        iframe.onload = () => resolve();
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const elements = document.querySelectorAll(".tab");
@@ -14,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         await sleep(500)
         iframe.src = `${page}`
-        await sleep(200)
+        await waitForLoad(iframe);
         history.pushState(null, "", page);
         iframe.classList.remove("disapper");
     }
